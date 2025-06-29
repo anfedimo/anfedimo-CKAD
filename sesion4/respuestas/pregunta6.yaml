@@ -1,0 +1,23 @@
+# kubectl create secret generic init-secret --from-literal=message="preguntas secretas CKAD!!"
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-secret-pod
+spec:
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: init-secret
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: secret-volume
+      mountPath: /tmp
+  initContainers:
+  - name: init-container
+    image: busybox
+    command: ["/bin/sh", "-c", "cat /etc/secret-volume/message > /tmp/secret-message"]
+    volumeMounts:
+    - name: secret-volume
+      mountPath: /etc/secret-volume

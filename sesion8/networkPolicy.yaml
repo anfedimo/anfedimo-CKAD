@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-pod
+  labels:
+    app: client
+spec:
+  containers:
+  - name: client
+    image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: curl-pod
+spec:
+  selector:
+    app: client
+  type: ClusterIP
+  ports:
+  - name: curl
+    protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-backend
+  labels:
+    role: backend
+spec:
+  containers:
+  - name: backend
+    image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    role: backend
+  type: ClusterIP
+  ports:
+  - name: backend
+    protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-database
+  labels:
+    role: database
+spec:
+  containers:
+  - name: database
+    image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  selector:
+    role: database
+  type: ClusterIP
+  ports:
+  - name: database
+    protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: restrict-traffic
+spec:
+  podSelector:
+    matchLabels:
+      app: client
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          role: backend
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          role: database
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+      - protocol: UDP
+        port: 53

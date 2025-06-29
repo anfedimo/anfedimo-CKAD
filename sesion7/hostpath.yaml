@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-pod
+spec:
+  containers:
+  - name: hostpath-pod
+    image: busybox
+    command: ["/bin/sh", "-c", "echo kubernetes > /opts/course.txt && sleep 100s"]
+    volumeMounts:
+    - name: data
+      mountPath: /opts
+  restartPolicy: Never
+  volumes:
+    - name: data
+      hostPath:
+        path: /data
+        type: DirectoryOrCreate

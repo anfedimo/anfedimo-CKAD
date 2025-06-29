@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  bd-web
+  labels:
+    app:  bd
+spec:
+  selector:
+    matchLabels:
+      app: bd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  bd
+    spec:
+      containers:
+      - name:  bd
+        image:  redis
+        ports:
+        - containerPort:  6379

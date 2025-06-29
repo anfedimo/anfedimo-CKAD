@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ckad-server
+  labels:
+    app: server
+    env: certi
+spec:
+  containers:
+  - name: ckad-server
+    image: nginx:alpine
+    ports:
+    - containerPort:  80
+      name:  http

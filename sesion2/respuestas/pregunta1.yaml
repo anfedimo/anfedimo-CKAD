@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: server-rs
+  namespace: dev-environment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: rs
+  template:
+    metadata:
+      labels:
+        app: rs
+    spec:
+      containers:
+      - name: demo
+        image: nginx
+        ports:
+        - name: demo
+          containerPort:  80
+          protocol: TCP

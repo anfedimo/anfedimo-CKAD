@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: old-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Allow
+  suspend: false
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: busybox
+            image: busybox
+            args:
+              - "/bin/sh"
+              - "-c"
+              - "echo 'Hello from old API'; sleep 10"

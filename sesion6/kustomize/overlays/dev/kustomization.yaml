@@ -1,0 +1,20 @@
+resources:
+  - ../../base
+  - bd.yaml
+
+labels:
+  - pairs:
+      curso: ckad
+      empresa: mitocode
+
+namePrefix: ckad-
+
+patches:
+  - target:
+      kind: Deployment
+      name: app-web
+    patch: |-
+       - op: replace
+         path: /spec/replicas
+         value: 2
+

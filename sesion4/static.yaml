@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ckad
+spec:
+  containers:
+  - name: ckad
+    image: nginx:alpine
+    ports:
+    - containerPort:  80
+      name:  http

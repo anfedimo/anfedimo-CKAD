@@ -1,0 +1,15 @@
+replicaCount: 3
+
+image:
+  repository: kennethreitz/httpbin
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  className: nginx
+  host: httpbin.local
+  path: /
+  pathType: Prefix

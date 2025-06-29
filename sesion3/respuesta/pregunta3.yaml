@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mitocode
+spec:
+  containers:
+  - name: mitocode
+    image: httpd
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: tecnologia
+            operator: In
+            values:
+            - kubernetes

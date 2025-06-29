@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trouble-pod
+  labels:
+    app:  trouble-pod
+spec:
+  selector:
+    matchLabels:
+      app: trouble-pod
+  template:
+    metadata:
+      labels:
+        app:  trouble-pod
+    spec:
+      containers:
+      - name: trouble-pod
+        image: busibox
+        command: ["/bin/sh", "-c", "eco cka > /opt/course.txt && slep 100s"]

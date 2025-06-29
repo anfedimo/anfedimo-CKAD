@@ -1,0 +1,19 @@
+resources:
+  - ../../base
+
+labels:
+  - pairs:
+      curso: cka
+      empresa: mitocode
+
+namePrefix: prod-
+
+patches:
+  - target:
+      kind: Deployment
+      name: app-web
+    patch: |-
+       - op: replace
+         path: /spec/replicas
+         value: 3
+

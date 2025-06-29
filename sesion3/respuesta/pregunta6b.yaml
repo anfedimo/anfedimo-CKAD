@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  deployment-demo
+  namespace: dev-environment
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  replicas: 6
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - name: demo
+        image: nginx
+        ports:
+        - containerPort:  80
+          name: demo
+      restartPolicy: Always

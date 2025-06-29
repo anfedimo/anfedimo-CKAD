@@ -1,0 +1,7 @@
+apiVersion: ckad.example.com/v1
+kind: Mitocode
+metadata:
+  name: ejemplo-mitocode
+spec:
+  pais: "Perú"
+  nombre: "Juan Carlos"

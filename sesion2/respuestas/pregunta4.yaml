@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pregunta4
+spec:
+  completions: 5
+  parallelism: 2
+  template:
+    metadata:
+      name: hello-pod
+    spec:
+      containers:
+      - name: hello-container
+        image: busybox
+        command: ["echo", "Hello, CKAD!"]
+      restartPolicy: Never
+  backoffLimit: 2

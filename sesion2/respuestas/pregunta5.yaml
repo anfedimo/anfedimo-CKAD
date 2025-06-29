@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello-cronjob
+spec:
+  schedule: "*/1 * * * *"  # Se ejecuta cada 1 minuto
+  successfulJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 5
+      template:
+        spec:
+          containers:
+          - name: hello-container
+            image: busybox
+            command: ["echo", "Hello, CKAD!!!"]
+          restartPolicy: Never

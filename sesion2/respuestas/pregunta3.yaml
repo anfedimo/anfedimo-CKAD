@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: pregunta3-daemonset
+  namespace: dev-environment
+spec:
+  selector:
+    matchLabels:
+      name: pregunta3
+  template:
+    metadata:
+      labels:
+        name: pregunta3
+    spec:
+      containers:
+      - name: pregunta3
+        image: httpd

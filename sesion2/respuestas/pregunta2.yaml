@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  pregunta2
+  namespace: dev-environment
+spec:
+  selector:
+    matchLabels:
+      app: pregunta2
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pregunta2
+    spec:
+      containers:
+      - name: pregunta2
+        image: juansalvadorg/pocs:api-poc
+        ports:
+        - containerPort:  8080
+          name: poc
+      restartPolicy: Always

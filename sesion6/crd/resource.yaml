@@ -1,0 +1,7 @@
+apiVersion: example.com/v1
+kind: MyResource
+metadata:
+  name: example-crd
+spec:
+  replicas: 2
+  image: hello-world

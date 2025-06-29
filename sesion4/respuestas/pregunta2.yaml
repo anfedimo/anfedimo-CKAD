@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  pregunta-dos
+spec:
+  selector:
+    matchLabels:
+      app: pregunta-dos
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pregunta-dos
+    spec:
+      containers:
+      - name: pregunta-dos
+        image: httpd
+        ports:
+        - containerPort:  80
+          name: http
+      restartPolicy: Always

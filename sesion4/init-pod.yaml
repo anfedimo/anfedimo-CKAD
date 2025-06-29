@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-container-ckad
+spec:
+  initContainers:
+  - name: init-ckad
+    image: busybox
+    command: ["sh", "-c", "echo 'Estoy en el Init Container!' > /data/ckad"]
+    volumeMounts:
+    - name: shared-data
+      mountPath: /data
+  containers:
+  - name: app-ckad
+    image: busybox
+    command: ["sh", "-c", "cat /data/ckad && sleep 3600"]
+    volumeMounts:
+    - name: shared-data
+      mountPath: /data
+  volumes:
+  - name: shared-data
+    emptyDir: {}
