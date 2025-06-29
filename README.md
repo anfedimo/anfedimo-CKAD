@@ -207,9 +207,10 @@ Permisos:
 
 ---
 
-## 👨‍💻 Autor : Fernando Díaz Moreno ![https://github.com/anfedimo](https://img.shields.io/github/followers/anfedimo?style=social)
+## 👨‍💻 Autor
+Fernando Díaz Moreno ([GitHub @anfedimo](https://github.com/anfedimo))
 
-Repositorio desarrollado para prácticas técnicas avanzadas en Kubernetes, con foco en seguridad, automatización y despliegue declarativo.
+[![GitHub followers](https://img.shields.io/github/followers/anfedimo?style=social)](https://github.com/anfedimo)
 
 
 ---
