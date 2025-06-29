@@ -5,6 +5,7 @@ Este repositorio contiene una colección completa de manifiestos YAML agrupados 
 
 Incluye ejemplos aplicados, recomendaciones basadas en OWASP Kubernetes Top 10 y una arquitectura recomendada para entornos reales.
 
+![KUBERNETES](https://kvadrat.az/uploads/articles/66f915066f5dc.png)
 ---
 
 ## 🗂️ Estructura por Sesiones
