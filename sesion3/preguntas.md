@@ -6,5 +6,3 @@
 4. Despliega un pod mitocode-resource que use la imagen que tienes en tu docker hub y configura los valores cpu request: 100m, cpu limit: 500m, memory request: 128Mi y memory limit: 512Mi.
 5. En el namespace dev-environment configura un limit range por contenedor que tenga limite maximo de 1 CPU y 1Gi y despliega un pod que infriga estas reglas.
 6. Crea un Resource Quota que permita solo desplegar 3 pods en el namespace dev-environment y despliega un deployment con 5 replicas.
-
-

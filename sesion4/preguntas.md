@@ -13,4 +13,4 @@
 5. Crea un Secret llamado db-secret, codifica sus valores en Base64 y crea un Pod llamado secret-pod que use este Secret para configurar sus variables de entorno.
 6. Crea un Secret llamado init-secret con la clave mensaje cuyo valor sea Examen CKAD, luego crea un Pod llamado init-secret-pod con las siguientes características:
    * Un Init Container que use la imagen busybox y escriba el valor del Secret en un archivo /tmp/secret.
-   * Un contenedor principal que use la imagen nginx y lea el archivo /tmp/secret al iniciarse.
+   * Un contenedor principal que use la imagen nginx y lea el archivo /tmp/secret al iniciarse. 

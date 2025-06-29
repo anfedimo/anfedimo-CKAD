@@ -14,3 +14,4 @@
 4. Crea una NetworkPolicy que permita tráfico al pod db-app solo desde el namespace trusted.
 5. Define una NetworkPolicy que solo permita tráfico de Pods con app=frontend hacia app=backend.
 6. Define una NetworkPolicy que permita que solo un Pod acceda a 8.8.8.8 (Google DNS).
+ 

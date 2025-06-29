@@ -16,4 +16,4 @@
    * Escala a 5 replicas y verifica que los pods se nombren secuencialmente.
    * El puerto de redis es el 6379
    * Puedes usar el cliente de redis para hacer pruebas: kubectl run redis-client --rm -it --image=redis -- bash
-   * Comando: redis-cli -h redis-0.redis y ejecutar ping
+   * Comando: redis-cli -h redis-0.redis y ejecutar ping 

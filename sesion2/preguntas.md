@@ -10,4 +10,3 @@
    
 5. Programa una tarea que se ejecute cada 2 minutos, configura un timeout de 5 segundos al job y que se mantengan solamente los últimos 2 jobs successfull. 
    * Puedes usar el siguiente comando en tu imagen busybox “date; echo Hello mitocode!!”
-
