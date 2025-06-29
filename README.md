@@ -207,14 +207,6 @@ Permisos:
 
 ---
 
-## 👨‍💻 Autor
-Fernando Díaz Moreno ([GitHub @anfedimo](https://github.com/anfedimo))
-
-[![GitHub followers](https://img.shields.io/github/followers/anfedimo?style=social)](https://github.com/anfedimo)
-
-
----
-
 ## 🔁 Integraciones Avanzadas: ArgoCD, Istio y Kyverno
 
 Estas herramientas fortalecen la seguridad, automatización y observabilidad en clústeres productivos de Kubernetes.
@@ -336,3 +328,13 @@ Esto garantiza:
 - Automatización de despliegue confiable
 - Validación antes de aplicar
 - Seguridad en la comunicación entre servicios
+
+
+## 👨‍💻 Autor
+
+Fernando Díaz Moreno
+
+[![GitHub: anfedimo](https://img.shields.io/badge/GitHub-@anfedimo-181717?logo=github)](https://github.com/anfedimo)
+[![LinkedIn: Fernando Díaz Moreno](https://img.shields.io/badge/LinkedIn-Fernando_Díaz_Moreno-blue?logo=linkedin)](http://linkedin.com/in/fernando-diaz-moreno-751b08ba)
+
+---
